@@ -2,11 +2,13 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Asian Plus Travel — เอกสารบริษัท</title>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; }
 
     body {
       font-family: 'Sukhumvit Set', 'Prompt', 'Sarabun', 'Segoe UI', sans-serif;
@@ -15,16 +17,41 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: clamp(12px, 4vw, 32px);
     }
 
     .card {
       background: #ffffff;
-      border-radius: 22px;
-      max-width: 420px;
+      border-radius: clamp(14px, 3vw, 22px);
+      max-width: 480px;
       width: 100%;
       overflow: hidden;
       box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+    }
+
+    /* ── Small phones (≤360px) ── */
+    @media (max-width: 360px) {
+      html { font-size: 14px; }
+      .header { padding: 20px 16px 18px; }
+      .company-en { font-size: 26px !important; letter-spacing: 2px !important; }
+      .section { padding: 12px 14px; }
+      .doc-link { padding: 10px 12px; gap: 10px; }
+      .doc-icon { width: 38px; height: 38px; font-size: 18px; }
+    }
+
+    /* ── Tablet & desktop (≥600px) ── */
+    @media (min-width: 600px) {
+      html { font-size: 17px; }
+      .company-en { font-size: 38px !important; }
+      .company-th { font-size: 14px !important; }
+      .doc-label { font-size: 14px !important; }
+      .doc-sub { font-size: 12px !important; }
+      .doc-icon { width: 50px !important; height: 50px !important; font-size: 24px !important; }
+    }
+
+    /* ── Large desktop (≥900px) ── */
+    @media (min-width: 900px) {
+      .card { max-width: 520px; }
     }
 
     /* ─── HEADER ─── */
@@ -317,34 +344,4 @@
         <span class="doc-label">เฟซบุ๊ก</span>
         <span class="doc-sub">Asian Plus Travel &amp; Service</span>
       </div>
-      <span class="doc-arrow">›</span>
-    </a>
-
-    <a class="doc-link" href="mailto:contact@asianplustravel.com">
-      <div class="doc-icon email">✉️</div>
-      <div class="doc-text">
-        <span class="doc-label">อีเมล</span>
-        <span class="doc-sub">contact@asianplustravel.com</span>
-      </div>
-      <span class="doc-arrow">›</span>
-    </a>
-
-    <a class="doc-link" href="https://www.asianplustravel.com" target="_blank" rel="noopener">
-      <div class="doc-icon web">🌐</div>
-      <div class="doc-text">
-        <span class="doc-label">เว็บไซต์</span>
-        <span class="doc-sub">www.asianplustravel.com</span>
-      </div>
-      <span class="doc-arrow">›</span>
-    </a>
-  </div>
-
-  <!-- ── Footer ── -->
-  <div class="footer">
-    <p>ผู้ประกอบการนำเที่ยวในประเทศ (Inbound DMC) · <strong>เชียงใหม่ ประเทศไทย</strong></p>
-  </div>
-
-</div>
-
-</body>
-</html>
+      <span class="doc-arrow">›<
