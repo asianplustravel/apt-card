@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Asian Plus Travel — เอกสารบริษัท</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Sukhumvit Set', 'Prompt', 'Sarabun', 'Segoe UI', sans-serif;
+      background: linear-gradient(160deg, #06113a 0%, #0d1e5c 50%, #06113a 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 22px;
+      max-width: 420px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      background: linear-gradient(160deg, #06113a 0%, #0d1e6e 60%, #06113a 100%);
+      padding: 30px 24px 26px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Gold top border accent */
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #8a6a1f, #d4af37, #f5d980, #d4af37, #8a6a1f);
+    }
+
+    /* Gold bottom border accent */
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    }
+
+    .company-en {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #f5e07a 0%, #d4af37 40%, #a07820 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .company-th {
+      font-family: 'Sukhumvit Set', 'Prompt', sans-serif;
+      color: rgba(255,255,255,0.9);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .tagline {
+      font-family: 'Sukhumvit Set', 'Prompt', sans-serif;
+      display: inline-block;
+      margin-top: 4px;
+      color: rgba(212,175,55,0.75);
+      font-size: 11.5px;
+      font-style: italic;
+      letter-spacing: 0.3px;
+      border-top: 1px solid rgba(212,175,55,0.3);
+      padding-top: 8px;
+      width: 100%;
+    }
+
+    /* ─── ADDRESS ─── */
+    .address-block {
+      background: #f5f7fc;
+      border-bottom: 1px solid #e2e7f0;
+      padding: 13px 22px;
+      text-align: center;
+    }
+
+    .address-block p {
+      color: #3a4a6e;
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .tax-id {
+      display: inline-block;
+      margin-top: 7px;
+      background: #e8ecf8;
+      border: 1px solid #c8d0e8;
+      border-radius: 6px;
+      padding: 3px 11px;
+      color: #0d1e6e;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── SECTIONS ─── */
+    .section {
+      padding: 16px 18px;
+    }
+
+    .section-title {
+      text-transform: uppercase;
+      font-size: 9.5px;
+      letter-spacing: 1.8px;
+      color: #8a9ab8;
+      font-weight: 700;
+      margin-bottom: 10px;
+      padding-left: 2px;
+    }
+
+    /* ─── LINK BUTTONS ─── */
+    .doc-link {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      background: #f5f7fc;
+      border: 1.5px solid #dce3f5;
+      border-radius: 13px;
+      padding: 13px 15px;
+      text-decoration: none;
+      margin-bottom: 9px;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+
+    .doc-link:last-child { margin-bottom: 0; }
+
+    .doc-link:hover, .doc-link:active {
+      background: #edf0fc;
+      border-color: #0d1e6e;
+      box-shadow: 0 2px 10px rgba(13,30,110,0.12);
+    }
+
+    .doc-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 21px;
+    }
+
+    .doc-icon.license   { background: linear-gradient(135deg, #fff8e1, #fef3c7); }
+    .doc-icon.insurance { background: linear-gradient(135deg, #e8f5e9, #d1f0d8); }
+    .doc-icon.facebook  { background: linear-gradient(135deg, #e8f0fe, #dce8ff); }
+    .doc-icon.line      { background: linear-gradient(135deg, #e6f9ee, #d0f5e0); }
+    .doc-icon.email     { background: linear-gradient(135deg, #fce8e8, #fdd8d8); }
+    .doc-icon.phone     { background: linear-gradient(135deg, #f3e8ff, #ead8ff); }
+    .doc-icon.web       { background: linear-gradient(135deg, #e8f4fe, #d0e8ff); }
+
+    .doc-text { flex: 1; min-width: 0; }
+
+    .doc-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #0d1e5c;
+      margin-bottom: 2px;
+    }
+
+    .doc-sub {
+      display: block;
+      font-size: 11px;
+      color: #6a7a9e;
+      line-height: 1.4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .doc-arrow {
+      color: #c0c8e0;
+      font-size: 18px;
+      flex-shrink: 0;
+      font-weight: 300;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e2e7f0, transparent);
+      margin: 0 18px;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: linear-gradient(160deg, #06113a 0%, #0d1e6e 100%);
+      padding: 13px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .footer::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #8a6a1f, #d4af37, #f5d980, #d4af37, #8a6a1f);
+    }
+
+    .footer p {
+      color: rgba(212,175,55,0.7);
+      font-size: 10.5px;
+      letter-spacing: 0.3px;
+    }
+
+    .footer strong {
+      color: #d4af37;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- ── Header ── -->
+  <div class="header">
+    <div class="company-en">ASIAN PLUS<br>TRAVEL</div>
+    <div class="company-th">บริษัท เอเชี่ยน พลัส ทราเวล แอนด์ เซอร์วิส จำกัด<br><span style="font-size:11px;opacity:0.75">Asian Plus Travel &amp; Service Co., Ltd.</span></div>
+    <div class="tagline">"พันธมิตรการเดินทางที่เชื่อถือได้ในประเทศไทย"</div>
+  </div>
+
+  <!-- ── Address ── -->
+  <div class="address-block">
+    <p>
+      259/208 ถนนมหิดล ต.ช้างคลาน อ.เมืองเชียงใหม่ จ.เชียงใหม่ 50100<br>
+      <small style="color:#6a7a9e">259/208 Mahidol Road, Chang Klan, Muang, Chiang Mai 50100</small>
+    </p>
+    <span class="tax-id">เลขผู้เสียภาษี: 0505568025440</span>
+  </div>
+
+  <!-- ── Documents ── -->
+  <div class="section">
+    <div class="section-title">📄 เอกสารบริษัท</div>
+
+    <!--
+      ⚠️ อัปเดต href ด้านล่างหลังจากอัปโหลดไฟล์ใหม่ขึ้น Google Drive
+      วิธี: เปิด Google Drive → อัปโหลดไฟล์ → คลิกขวา → "Get link" → Copy link
+    -->
+    <a class="doc-link"
+       href="https://drive.google.com/file/d/1Vv4rlbOvhho8GeZ1q-j95iet7q4Oc9Xz/view?usp=sharing"
+       target="_blank" rel="noopener">
+      <div class="doc-icon license">🏛️</div>
+      <div class="doc-text">
+        <span class="doc-label">ใบอนุญาตประกอบธุรกิจนำเที่ยว</span>
+        <span class="doc-sub">Tour Business License No. 21/00808</span>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-link"
+       href="https://drive.google.com/file/d/1rnSHSr52psrI1OPia1xTJ6Sd0GdARY6s/view?usp=sharing"
+       target="_blank" rel="noopener">
+      <div class="doc-icon insurance">🛡️</div>
+      <div class="doc-text">
+        <span class="doc-label">ประกันภัยอุบัติเหตุการเดินทาง</span>
+        <span class="doc-sub">Travel Accident Insurance · Tokyo Marine</span>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ── Contact ── -->
+  <div class="section">
+    <div class="section-title">📞 ติดต่อเรา</div>
+
+    <a class="doc-link" href="tel:+66989098262">
+      <div class="doc-icon phone">📞</div>
+      <div class="doc-text">
+        <span class="doc-label">โทรศัพท์ / WhatsApp</span>
+        <span class="doc-sub">098 909 8262 (จักกฤช)</span>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-link" href="https://line.me/ti/p/peKuVtdAxn" target="_blank" rel="noopener">
+      <div class="doc-icon line">💬</div>
+      <div class="doc-text">
+        <span class="doc-label">LINE Official</span>
+        <span class="doc-sub">Info.asianplus</span>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-link" href="https://www.facebook.com/AsianPlusTravelService" target="_blank" rel="noopener">
+      <div class="doc-icon facebook">📘</div>
+      <div class="doc-text">
+        <span class="doc-label">เฟซบุ๊ก</span>
+        <span class="doc-sub">Asian Plus Travel &amp; Service</span>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-link" href="mailto:contact@asianplustravel.com">
+      <div class="doc-icon email">✉️</div>
+      <div class="doc-text">
+        <span class="doc-label">อีเมล</span>
+        <span class="doc-sub">contact@asianplustravel.com</span>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+
+    <a class="doc-link" href="https://www.asianplustravel.com" target="_blank" rel="noopener">
+      <div class="doc-icon web">🌐</div>
+      <div class="doc-text">
+        <span class="doc-label">เว็บไซต์</span>
+        <span class="doc-sub">www.asianplustravel.com</span>
+      </div>
+      <span class="doc-arrow">›</span>
+    </a>
+  </div>
+
+  <!-- ── Footer ── -->
+  <div class="footer">
+    <p>ผู้ประกอบการนำเที่ยวในประเทศ (Inbound DMC) · <strong>เชียงใหม่ ประเทศไทย</strong></p>
+  </div>
+
+</div>
+
+</body>
+</html>
